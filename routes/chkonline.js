@@ -29,7 +29,7 @@ router.post('/', (req, res) => {
         
         console.log(date,lastup);
         console.log(date-lastup);
-        if ((date - lastup)/1000 < 12) {
+        if ((date - lastup)/1000 < 200) {
 
 
             user.User.find({ "actno": actno }, function (err, foundData) {
