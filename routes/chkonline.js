@@ -76,20 +76,22 @@ router.post('/', (req, res) => {
 
                    user.User.findOneAndUpdate({actno: userAccountNumber}, {$push: {transactions: userAccountTransaction}},function(err) {
                     if(!err) {
-                        console.log("chod");
+                        console.log("Done");
                     }
                    });
                     
                    user.User.findOneAndUpdate({actno: actno}, {$push: {transactions: receiverAccountTransaction}},function(err) {
-                    console.log("chod");
+                    console.log("Done");
                    });
 
 
                 }
             });
+            res.send("Transaction successful");
         }
         else {
             console.log('Reciever is offline');
+            res.send("Reciever offline");
         }
     });
 });

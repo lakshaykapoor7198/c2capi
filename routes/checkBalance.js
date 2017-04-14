@@ -20,7 +20,7 @@ router.post('/', function(req, res, next) {
 
 		if(!err) {
 			
-			res.end(foundData[0]["balance"]+'');
+			res.json({"status":true,"balance":foundData[0]["balance"]});
 		}
 
 
