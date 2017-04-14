@@ -31,6 +31,9 @@ app.use('/client_token',client_token);
 app.use('/date',dateup);
 app.use('/chkonline',chkonline);
 app.use('/checkBalance',checkBalance);
+app.get('/',function(req,res){
+	res.send("Hi");
+});
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
